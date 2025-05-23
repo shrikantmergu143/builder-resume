@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    
+    body {
+        @apply font-[sans-serif];
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-2.5 h-2.5;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-200;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-zinc-700;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-zinc-600; 
+    }
+
+    textarea, input:focus {
+        @apply focus:outline-none;
+    }
+
+    .ul-padding{
+        padding-inline-start: 0.9rem;
+    }
+
+    .ul-padding-none{
+        padding-inline-start: 0;
+    }
+}
+
+@layer components{
+    .pi{
+        @apply p-2 mb-2 text-white bg-zinc-800/70 backdrop-blur-sm rounded text-[0.9rem] border border-white/10;
+    }
+
+    .profileInput{
+        @apply pi file:border-0 file:bg-zinc-800 file:text-white file:rounded-sm;
+    }
+
+    .flex-col-gap-2{
+        @apply flex flex-col gap-2;
+    }
+
+    .flex-wrap-gap-2{
+        @apply flex flex-wrap gap-2;
+    }
+
+    .other-input{
+        @apply p-2 mb-2 text-white bg-zinc-800/70 backdrop-blur-sm rounded focus:placeholder-transparent border border-white/10;
+    }
+
+    .input-title{
+        @apply text-[1rem] text-white font-semibold;
+    }
+
+    .f-col{
+        @apply flex flex-col;
+    }
+
+    .grid-4{
+        @apply grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4;
+    }
+
+    .editable{
+        @apply hover:bg-gray-100 hover:cursor-text outline-none;
+    }
+
+}
+
+.name{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.profession{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.social-media{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.section-title{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.content{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sub-content{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.i-bold{
+    font-weight: 700 !important;
+}
+.fw-6{
+    font-weight: 600 !important;
+}
+.ql-editors{    font-size: 14px;}
+.ql-editors.p-0, .ql-editors.p-0{padding: 0px!important;}
+.ql-editors ol, .ql-editors ol{padding-left: 0px!important;}
+.ql-editors ol li {
+    list-style-type: none;
+    padding-left: 1.5em;
+    position: relative;
+    font-size: 14px!important;
+    display: flex;
+    align-items: flex-start;
+}
+.ql-editors .ql-ui {
+    position: absolute;
+}
+.ql-editors ol li > .ql-ui:before {
+    display: inline-block;
+    margin-left: -1.5em;
+    margin-right: 0.3em;
+    text-align: right;
+    white-space: nowrap;
+    width: 1.2em;
+}
+.ql-editors ol li .ql-ui{
+    position: absolute;
+    border: 3px solid;border-radius: 30px;
+    left: 7px;
+    top: 7px;
+    display: block;
+    z-index: 43;
+}
+
+@media print {
+    .exclude-print {
+        display: none !important;
+    }
+
+    .rm-padding-print {
+        padding: 0;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    .preview {
+        overflow-y: visible !important;
+    }
+
+    .preview::after {
+        content: "Made using : free-next-resume-maker.vercel.app ";
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        opacity: 0.2;
+        font-size: small;
+        text-align: center;
+        z-index: -1;
+    }
+    .hide-on-print { display: none !important; }
+    .on-print { display: block !important; }
+}
+.ql-editors {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.ql-editors p,
+.ql-editors ul,
+.ql-editors div {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+    .hide-on-print { display: block !important; }
+    .on-print { display: none !important; }
+.text-editor .ql-snow .ql-stroke,.text-editor .ql-snow .ql-picker{color: white;    stroke: white;}
